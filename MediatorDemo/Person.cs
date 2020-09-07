@@ -7,11 +7,14 @@ namespace MediatorDemo
     public abstract class Person
     {
         protected Mediator mediator;
-        public string Nickname { get; set; }
-        public Person(Mediator mediator, string nickname)
+        public string Nickname { get; }
+        public Person(string nickname)
+        {
+            this.Nickname = nickname;
+        }
+        internal void SetMediator(Mediator mediator)
         {
             this.mediator = mediator;
-            this.Nickname = nickname;
         }
         public virtual void Send(string notification)
         {
