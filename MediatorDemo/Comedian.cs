@@ -6,7 +6,7 @@ namespace MediatorDemo
 {
     public class Comedian : Person
     {
-        public Comedian(string nickname) : base(nickname)
+        public Comedian(Mediator mediator, string nickname) : base(mediator, nickname)
         {
         }
         public override void HandleNotification(string from, string notification)
