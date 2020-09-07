@@ -26,5 +26,9 @@ namespace MediatorDemo
         {
             this.persons.Where(p => p != person).ToList().ForEach(p => p.HandleNotification(person.Nickname, notification));
         }
+        public override void SendTo<T>(Person person, string notification)
+        {
+            this.persons.OfType<T>().ToList().Where(p => p.Nickname != person.Nickname).ToList().ForEach(p => p.HandleNotification(person.Nickname, notification));
+        }
     }
 }

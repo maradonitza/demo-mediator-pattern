@@ -20,6 +20,10 @@ namespace MediatorDemo
         {
             this.mediator.Send(this, notification);
         }
+        internal void SendTo<T>(string notification) where T: Person
+        {
+            this.mediator.SendTo<T>(this, notification);
+        }
         public abstract void HandleNotification(string from, string notification);
     }
 }
