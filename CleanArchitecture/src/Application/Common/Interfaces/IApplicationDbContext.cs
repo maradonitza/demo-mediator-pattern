@@ -10,6 +10,8 @@ namespace CleanArchitecture.Application.Common.Interfaces
         DbSet<TodoList> TodoLists { get; set; }
 
         DbSet<TodoItem> TodoItems { get; set; }
+        
+        DbSet<Person> Persons { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
